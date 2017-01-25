@@ -1,0 +1,28 @@
+
+
+.menu li{
+
+	display:inline;
+}
+
+
+.menu li a{
+
+	padding :20px 80px;
+	background-color: blue;
+	color :white; 
+} 
+
+.menu li a:hover{
+	background-color: red;
+}
+
+.footer{
+	background-color : blue;
+}
+
+.footer h5{
+	color:white;
+	padding: 10px 40px;
+
+}
