@@ -1,3 +1,11 @@
+
+<?php 
+
+session_start();
+?>
+
+
+
 <!-- DOCTYPE supprimé, ca peut être utile de le préciser-->
 <html>
 	<head>

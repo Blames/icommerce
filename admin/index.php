@@ -2,25 +2,34 @@
 
 <?php 
 
+session_start();
+
 $user= 'admin';
 $password_user="password";
 
 if (isset($_POST['submit'])){
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+
+	if ($username&&$password) { //vérifie que les champs soient remplis
+		
+
+		if (($user==$username)&&($password==$password_user)) { // vérifie que les champs soient corrects
+				echo "là normalement ça se connecte.";
 
 
+				$_SESSION['username']=$username;
+				header('location: admin.php');
 
-if (($user=$username)&&($password=$password_user)) {
-		echo "là normalement ça se connecte.";
+			}else{
+				echo "Les identifiants semblent erronés";
+			}
 	}else{
-		echo "Identifiants erronés";
+		echo'Veuillez remplir tous les champs.';
 	}
-
-
-
 }
+
 
  ?>
 

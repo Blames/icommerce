@@ -1,14 +1,24 @@
-
-
-.menu li{
-
-	display:inline;
+.sidebar{
+	background-color: blue;
+	float:right;
+	width:247px;
+	height:300px;
+	margin-right: 51px;
+	margin-top: 15px;
 }
 
+.sidebar h4{
+	text-align: center;
+	color: white;
+}
+
+.menu li{
+	display:inline;
+	padding-top: 50px;
+}
 
 .menu li a{
-
-	padding :20px 80px;
+	padding :20px 90px;
 	background-color: blue;
 	color :white; 
 } 
