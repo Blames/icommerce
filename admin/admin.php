@@ -11,11 +11,45 @@ if(isset($_SESSION['username'])){
 
 
 		if ($_GET['action']=='add') {
-			echo "add";
+			if (isset($_POST['submit'])) {
+				
+				$title=$_POST['title'];
+				$description=$_POST['description'];
+				$price=$_POST['price'];
+
+				if ($title&&$description&&$price) {
+					
+					$db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
+
+					$insert = $db->prepare("INSERT INTO products VALUES('','$title','$description','1','$price')"); // Là c'est la merde, il faut que je configure bien ma base de données.
+
+
+				}else{
+					echo "Veuillez remplir tous les champs.";
+				}
+
+			}
+			
+
+			?>
+
+			<form action="" method="post">
+				<h3>Titre du produit :</h3><input type="text" name="title">
+				<h3>Description du produit :</h3><input type="text" name="description">
+				<h3>Prix :</h3><input type="text" name="price">
+				<input type="submit" name="submit">
+			</form>
+
+
+			<?php
 		}
+
+
 		else if ($_GET['action']=='modify') {
 			echo "modify";
 		}
+
+
 		else if ($_GET['action']=='delete') {
 			echo "delete";
 		}
