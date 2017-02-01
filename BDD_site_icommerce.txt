@@ -8,12 +8,12 @@
 #------------------------------------------------------------
 
 CREATE TABLE products(
-        id          int (11) Auto_increment  NOT NULL ,
+        id          int (11) Auto_increment ,
         name        Varchar (50) NOT NULL ,
         description Text ,
         quantity    Int ,
         price       Decimal (25) NOT NULL ,
-        id_users    Int NOT NULL ,
+        id_users    Int ,
         PRIMARY KEY (id )
 )ENGINE=InnoDB;
 
@@ -23,7 +23,7 @@ CREATE TABLE products(
 #------------------------------------------------------------
 
 CREATE TABLE users(
-        id    int (11) Auto_increment  NOT NULL ,
+        id    int (11) Auto_increment ,
         name  Varchar (50) NOT NULL ,
         admin Bool NOT NULL ,
         PRIMARY KEY (id )

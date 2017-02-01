@@ -16,12 +16,22 @@ if(isset($_SESSION['username'])){
 				$title=$_POST['title'];
 				$description=$_POST['description'];
 				$price=$_POST['price'];
+				$quantity=$_POST['quantity'];
 
-				if ($title&&$description&&$price) {
-					
-					$db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
+				if ($title&&$description&&$price&&$quantity) {
 
-					$insert = $db->prepare("INSERT INTO products VALUES('','$title','$description','1','$price')"); // Là c'est la merde, il faut que je configure bien ma base de données.
+					try{
+						$db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
+						$db->setAttribute(PDO::ATTR_CASE, PDO::CASE_LOWER);
+						$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					}
+					catch(Exception $e){
+						echo "Une erreur est survenue";
+						die();
+					}
+
+					$insert = $db->prepare("INSERT INTO products VALUES('0','$title','$description','$quantity','$price')"); // Là c'est la merde, il faut que je configure bien ma base de données.
+					$insert -> execute();
 
 
 				}else{
@@ -30,13 +40,14 @@ if(isset($_SESSION['username'])){
 
 			}
 			
-
+			
 			?>
 
 			<form action="" method="post">
 				<h3>Titre du produit :</h3><input type="text" name="title">
 				<h3>Description du produit :</h3><input type="text" name="description">
 				<h3>Prix :</h3><input type="text" name="price">
+				<h3>Quantité :</h3><input type="text" name="quantity">
 				<input type="submit" name="submit">
 			</form>
 
