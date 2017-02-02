@@ -13,7 +13,6 @@ CREATE TABLE products(
         description Text ,
         quantity    Int ,
         price       Decimal (25) NOT NULL ,
-        id_users    Int ,
         PRIMARY KEY (id )
 )ENGINE=InnoDB;
 

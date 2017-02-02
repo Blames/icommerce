@@ -24,6 +24,7 @@ if(isset($_SESSION['username'])){
 						$db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
 						$db->setAttribute(PDO::ATTR_CASE, PDO::CASE_LOWER);
 						$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+						echo "Votre produit a bien été enregistré !";
 					}
 					catch(Exception $e){
 						echo "Une erreur est survenue";
@@ -62,6 +63,11 @@ if(isset($_SESSION['username'])){
 
 			while ($s=$select->fetch(PDO::FETCH_OBJ)) {
 				echo $s->name;
+				?>
+				<a href="?action=modify&amp;id=<?php echo $s->id; ?>"> Modifier</a>
+				<a href="?action=delete&amp;id=<?php echo $s->id; ?>"> X</a>
+				<?php
+
 			}
 
 		}else if ($_GET['action']=='modify') {
@@ -70,7 +76,10 @@ if(isset($_SESSION['username'])){
 
 
 		else if ($_GET['action']=='delete') {
-			echo "delete";
+			$db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
+			$id=$_GET['id'];
+			$select = $db->prepare("DELETE FROM products WHERE id=$id");
+			$select -> execute();
 		}
 
 
