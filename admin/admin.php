@@ -2,8 +2,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <?php 
 
-session_start();
+session_start();?>
 
+<h1>Bienvenue <?php echo $_SESSION['username'] ?>!</h1>
+
+<a href="?action=add">Ajouter un produit</a>
+<a href="?action=modifyanddelete">Modifier/supprimer un produit</a>
+</br></br>
+<?php
 
 if(isset($_SESSION['username'])){
 
@@ -46,7 +52,7 @@ if(isset($_SESSION['username'])){
 
 			<form action="" method="post">
 				<h3>Titre du produit :</h3><input type="text" name="title">
-				<h3>Description du produit :</h3><input type="text" name="description">
+				<h3>Description du produit :</h3><textarea name="description"></textarea>
 				<h3>Prix :</h3><input type="text" name="price">
 				<h3>Quantité :</h3><input type="text" name="quantity">
 				<input type="submit" name="submit">
@@ -71,7 +77,40 @@ if(isset($_SESSION['username'])){
 			}
 
 		}else if ($_GET['action']=='modify') {
-			echo "modify";
+
+			$id=$_GET['id'];
+
+			$db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
+			$select = $db->prepare ("SELECT * FROM products WHERE id=$id"); 
+			$select -> execute();
+
+			$data = $select->fetch(PDO::FETCH_OBJ);
+
+			?>
+
+			<form action="" method="post">
+				<h3>Titre du produit :</h3><input value="<?php echo $data->name; ?>" type="text" name="title">
+				<h3>Description du produit :</h3><input value="<?php echo $data->description; ?>" name="description">
+				<h3>Prix :</h3><input value="<?php echo $data->price; ?>" type="text" name="price">
+				<h3>Quantité :</h3><input value="<?php echo $data->quantity; ?>" type="text" name="quantity">
+				<input type="submit" name="submit">
+			</form>
+
+
+			<?php
+			if(isset ($_POST['submit'])){
+
+				$title=$_POST['title'];
+				$description=$_POST['description'];
+				$price=$_POST['price'];
+				$quantity=$_POST['quantity'];
+
+				$update= $db->prepare("UPDATE products SET title='$title',description='$description',price='$price',quantity='$quantity' WHERE id=$id");
+				$update->execute();
+				header('Location: admin.php');
+
+			}
+
 		}
 
 
@@ -81,15 +120,6 @@ if(isset($_SESSION['username'])){
 			$select = $db->prepare("DELETE FROM products WHERE id=$id");
 			$select -> execute();
 		}
-
-
-
-
-
-
-
-
-
 	}
 }
 
@@ -98,9 +128,3 @@ header('location: ../index.php');
 } 
 ?>
 
-
-
-<h1>Bienvenue <?php echo $_SESSION['username'] ?>!</h1>
-
-<a href="?action=add">Ajouter un produit</a>
-<a href="?action=modifyanddelete">Modifier/supprimer un produit</a>

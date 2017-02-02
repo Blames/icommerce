@@ -10,7 +10,7 @@ while ($s=$select ->fetch (PDO::FETCH_OBJ)){
 
 	<h2><?php echo $s->name; ?></h2>
 	<h5><?php echo $s->description; ?></h5>
-	<h4><?php echo $s->price; ?></h4>
+	<h4><?php echo $s->price; ?>€</h4>
 	<?php
 }
 
