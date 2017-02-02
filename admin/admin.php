@@ -40,7 +40,7 @@ if(isset($_SESSION['username'])){
 
 			}
 			
-			
+
 			?>
 
 			<form action="" method="post">
@@ -53,10 +53,18 @@ if(isset($_SESSION['username'])){
 
 
 			<?php
-		}
 
+		}else if ($_GET['action']=='modifyanddelete') {
 
-		else if ($_GET['action']=='modify') {
+			$db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
+			$select = $db->prepare ("SELECT * FROM products"); 
+			$select -> execute();
+
+			while ($s=$select->fetch(PDO::FETCH_OBJ)) {
+				echo $s->name;
+			}
+
+		}else if ($_GET['action']=='modify') {
 			echo "modify";
 		}
 
@@ -86,5 +94,4 @@ header('location: ../index.php');
 <h1>Bienvenue <?php echo $_SESSION['username'] ?>!</h1>
 
 <a href="?action=add">Ajouter un produit</a>
-<a href="?action=modify">Modifier un produit</a>
-<a href="?action=delete">Supprimer un produit</a>
+<a href="?action=modifyanddelete">Modifier/supprimer un produit</a>
