@@ -78,6 +78,7 @@ if(isset($_SESSION['username'])){
 
 		}else if ($_GET['action']=='modify') {
 
+
 			$id=$_GET['id'];
 
 			$db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
@@ -93,7 +94,7 @@ if(isset($_SESSION['username'])){
 				<h3>Description du produit :</h3><input value="<?php echo $data->description; ?>" name="description">
 				<h3>Prix :</h3><input value="<?php echo $data->price; ?>" type="text" name="price">
 				<h3>Quantité :</h3><input value="<?php echo $data->quantity; ?>" type="text" name="quantity">
-				<input type="submit" name="submit">
+				<input type="submit" name="submit" value ="Modifier">
 			</form>
 
 
@@ -105,7 +106,7 @@ if(isset($_SESSION['username'])){
 				$price=$_POST['price'];
 				$quantity=$_POST['quantity'];
 
-				$update= $db->prepare("UPDATE products SET title='$title',description='$description',price='$price',quantity='$quantity' WHERE id=$id");
+				$update= $db->prepare("UPDATE products SET name='$title',description='$description',price='$price',quantity='$quantity' WHERE id=$id");
 				$update->execute();
 				header('Location: admin.php');
 
