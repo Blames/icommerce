@@ -24,6 +24,63 @@ if(isset($_SESSION['username'])){
 				$price=$_POST['price'];
 				$quantity=$_POST['quantity'];
 
+				$img=$_FILES['img']['name'];
+
+				$img_tmp= $_FILES['img']['tmp_name'];
+
+				if (!empty($img_tmp)) {
+					
+					$image =explode('.',$img);
+					$image_ext= end($image);
+
+					if (in_array(strtolower($image_ext),array('png','jpg','jpeg'))==false) {
+						echo "Votre extension d'image n'est pas prise en compte. Veuillez entrer une image en .png, .jpg ou .jpeg !";
+
+					}else{
+
+						$image_size = getimagesize($img_tmp);
+
+						if ($image_size['mime']=='image/jpeg') {
+
+							$image_src = imagecreatefromjpeg($img_tmp);
+
+						}else if ($image_size['mime']=='image/png') {
+
+							$image_src = imagecreatefrompng($img_tmp);
+
+						}else{
+
+							$image_src = false;
+							echo "Veuillez entrer une image valide";
+						}
+
+					if ($image_src!==false) {
+					$image_width = 200;
+				
+					if ($image_size[0]==$image_width) {
+							$image_final = $image_src;
+
+						}else{
+							$new_width[0]=$image_width;
+							$new_height[1] = 200;
+
+							$image_final = imagecreatetruecolor($new_width[0], $new_height[1]);
+
+							imagecopyresampled($image_final, $image_src, 0, 0, 0, 0, $new_width[0], $new_height[1], $image_size[0], $image_size[1]);
+
+						}
+
+
+						imagejpeg($image_final,'imgs/'.$title.'.jpg');
+					}
+				}
+
+
+				}else{
+					echo "Veuillez entrer une image.";
+				}
+
+
 				if ($title&&$description&&$price&&$quantity) {
 
 					try{
@@ -50,11 +107,13 @@ if(isset($_SESSION['username'])){
 
 			?>
 
-			<form action="" method="post">
+			<form action="" method="post" enctype="multipart/form-data">
 				<h3>Titre du produit :</h3><input type="text" name="title">
 				<h3>Description du produit :</h3><textarea name="description"></textarea>
 				<h3>Prix :</h3><input type="text" name="price">
 				<h3>Quantité :</h3><input type="text" name="quantity">
+				<input type="file" name="img">
+				</br></br>
 				<input type="submit" name="submit">
 			</form>
 
@@ -72,6 +131,7 @@ if(isset($_SESSION['username'])){
 				?>
 				<a href="?action=modify&amp;id=<?php echo $s->id; ?>"> Modifier</a>
 				<a href="?action=delete&amp;id=<?php echo $s->id; ?>"> X</a>
+				</br>
 				<?php
 
 			}
