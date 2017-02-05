@@ -4,7 +4,8 @@
 
 session_start();?>
 
-<h1>Bienvenue <?php echo $_SESSION['username'] ?>!</h1>
+<h1 id="adminpanel">PANNEAU D'ADMINISTRATION</h1>
+<h1>Vous êtes logé en tant que : <?php echo $_SESSION['username'] ?></h1>
 
 <a href="?action=add">Ajouter un produit</a>
 <a href="?action=modifyanddelete">Modifier/supprimer un produit</a>
@@ -112,9 +113,10 @@ if(isset($_SESSION['username'])){
 				<h3>Description du produit :</h3><textarea name="description"></textarea>
 				<h3>Prix :</h3><input type="text" name="price">
 				<h3>Quantité :</h3><input type="text" name="quantity">
+				<h3>Image :</h3>
 				<input type="file" name="img">
 				</br></br>
-				<input type="submit" name="submit">
+				<input type="submit" name="submit" value="Ajouter">
 			</form>
 
 
