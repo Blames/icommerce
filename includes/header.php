@@ -28,20 +28,29 @@ catch(Exception $e){
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="style/style.css">
-
 	</head>
 
 
-	<header>
+	<header class="header">
 
-	<br\><h1>SITE DE LA GLOIRE.</h1><br>
-		<ul class="menu">
-			<li><a href="index.php">Acceuil</a></li>
-			<li><a href="boutique.php">Boutique</a></li>
-			<li><a href="panier.php">Panier</a></li>
-			<li><a href="inscription.php">Inscription</a></li>
-			<li><a href="connexion.php">Connexion</a></li>
-		</ul>
+	<br\>
+
+	<h1 class="titre">CONSPI-MARKET</h1>
+
+				<ul class="menu">
+					<div class="btn-grp">
+
+								<a href="index.php"><button type="button" class="btn btn-primary">Acceuil</button></a>
+
+								<a href="boutique.php"><button type="button" class="btn btn-primary">Boutique</button></a>
+
+								<a href="panier.php"><button type="button" class="btn btn-primary">Panier</button></a>
+
+								<a href="admin"><button type="button" class="btn btn-primary">Connexion</button></a>
+					</div>
+
+				</ul>
+
  
 	</header>
 

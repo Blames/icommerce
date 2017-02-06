@@ -1,3 +1,4 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <?php 
 
@@ -11,11 +12,15 @@ $select -> execute();
 
 while ($s=$select ->fetch (PDO::FETCH_OBJ)){
 	?>
-
-	<img src="admin/imgs/<?php echo $s ->name;  ?>.jpg"/>
-	<h2><?php echo $s->name; ?></h2>
-	<h5><?php echo $s->description; ?></h5>
-	<h4><?php echo $s->price; ?>M €</h4>
+	
+	<div class="row">
+	  	<div class="col-sm-4">
+			<img src="admin/imgs/<?php echo $s ->name;  ?>.jpg"/>
+			<h2><?php echo $s->name; ?></h2>
+			<h5><?php echo $s->description; ?></h5>
+			<h4><?php echo $s->price; ?>M €</h4>
+		</div>
+	</div>
 	<?php
 }
 

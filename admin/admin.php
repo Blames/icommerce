@@ -4,8 +4,8 @@
 
 session_start();?>
 
-<h1 id="adminpanel">PANNEAU D'ADMINISTRATION</h1>
-<h1>Vous êtes logé en tant que : <?php echo $_SESSION['username'] ?></h1>
+<h1 align="center">PANNEAU D'ADMINISTRATION</h1>
+<h1>Vous êtes connecté en tant que : <?php echo $_SESSION['username'] ?></h1>
 
 <a href="?action=add">Ajouter un produit</a>
 <a href="?action=modifyanddelete">Modifier/supprimer un produit</a>
