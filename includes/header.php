@@ -15,7 +15,6 @@ catch(Exception $e){
 ?>
 
 
-
 <!-- DOCTYPE supprimé, ca peut être utile de le préciser-->
 <html>
 	<head>
@@ -24,8 +23,6 @@ catch(Exception $e){
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="style/style.css">
 	</head>
@@ -34,8 +31,11 @@ catch(Exception $e){
 	<header class="header">
 
 	<br\>
-
-	<h1 class="titre">CONSPI-MARKET</h1>
+	<br>
+	<h1 class="titre" style="font-size: 700%">CONSPI-MARKET</h1>
+		<br>
+		<h2 class="sousTitre"> Pour gouverner en toute tranquillité !</h2>
+		<br>
 
 				<ul class="menu">
 					<div class="btn-grp">

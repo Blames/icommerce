@@ -1,17 +1,27 @@
 
 
 .titre{
-	color : red;
+	font-family: lucida Console;
+	color : grey;
+	text-shadow: 5px 5px 10px red;
+	margin-left: 15px;
 }
 
 .sousTitre{
 	font-style: italic;
 	color : grey;
+	text-shadow: 5px 5px 10px blue;
+	margin-left: 25px;
 }
 
+.presentation{
+
+	text-align: center;
+}
 
 .adminPanel{
 	text-align: center;
+
 }
 
 .sidebar{
@@ -33,13 +43,11 @@
 }
 
 
-.footer{
-	background-color : blue;
-}
-
-.footer h5{
+#footer{
 	color:white;
-	padding: 10px 40px;
+	padding: 10px 10px;
+	background-color : grey;
+
 
 }
 
@@ -48,9 +56,8 @@
 }
 
 .accueuil{
-	color: red;
 	background-image: url("http://kaba35.com/wp-content/uploads/2015/11/Savin-NY-Website-Background-Web1.jpg");
-	background-size: 200px 200px;
+	background-size : contain;
 }
 
 .header{

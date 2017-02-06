@@ -1,6 +1,4 @@
 
 
-	<div class='footer'>
-		<h5>Copyright &copy; Site blabla E-commerce de mes deux</h5>
+		<h5 id="footer">Copyright 2017 &copy; Maxoubidou Industries. All rights reserved.</h5>
 
-	</div>

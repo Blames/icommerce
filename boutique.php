@@ -4,7 +4,6 @@
 
 require_once('includes/header.php');
 
-require_once('includes/sidebar.php');
 
 $db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
 $select = $db->prepare("SELECT * FROM products");
