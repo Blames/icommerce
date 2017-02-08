@@ -33,7 +33,7 @@ if (isset($_POST['submit'])){
 
  ?>
 
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="http://localhost/icommerce/style/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <h1>administration - Connexion</h1>
@@ -42,3 +42,5 @@ if (isset($_POST['submit'])){
 <h3>Mot de passe : </h3> <input type="password" name="password"/><br/><br/>
 <input type="submit" name="submit"/><br/><br/>
 </form>
+
+<a  href="/icommerce/index.php" class="button">Retour à l'acceuil</a>

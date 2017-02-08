@@ -1,15 +1,40 @@
-<link rel="stylesheet" type="text/css" href="style/style.css">
+<link rel="stylesheet" type="text/css" href="http://localhost/icommerce/style/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <?php 
 
 session_start();?>
+<div class="headerAdminBack">
+<br>
+<h1 align="center" class="headerAdmin">PANNEAU D'ADMINISTRATION</h1>
+<h1 class="headerAdmin">Vous êtes connecté en tant que : <?php echo $_SESSION['username'] ?></h1>
+<a href="/icommerce/index.php"><button type="button" class="btn btn-primary">Retour à l'acceuil</button></a>
+<br>
+<br>
 
-<h1 align="center">PANNEAU D'ADMINISTRATION</h1>
-<h1>Vous êtes connecté en tant que : <?php echo $_SESSION['username'] ?></h1>
 
-<a href="?action=add">Ajouter un produit</a>
-<a href="?action=modifyanddelete">Modifier/supprimer un produit</a>
+
 </br></br>
+</br></br>
+<div class=	"buttonAdmin">
+<a href="?action=add" class="button">Ajouter un produit</a>
+<a href="?action=modifyanddelete" class="button">Modifier/supprimer un produit</a>
+</div>
+
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+</br></br>
+
 <?php
 
 if(isset($_SESSION['username'])){
@@ -190,4 +215,4 @@ else{
 header('location: ../index.php');
 } 
 ?>
-
+</div>
