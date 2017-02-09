@@ -1,3 +1,6 @@
+.boutique{
+	margin-left: 20px;
+}
 
 #buttonRetourAccueuil{
 	background-color: #4CAF50;
@@ -56,6 +59,8 @@
 .presentation{
 
 	text-align: center;
+	color: blue
+	font-size: 1.875em;
 }
 
 .adminPanel{
@@ -97,9 +102,14 @@
 .accueuil{
 	background-image: url("http://kaba35.com/wp-content/uploads/2015/11/Savin-NY-Website-Background-Web1.jpg");
 	background-size : contain;
+	background-attachment: fixed;
 }
 
 .header{
 	background-image: url(http://blog.hostbaby.com/wp-content/uploads/2013/07/scuffedstatic_dark1400x900.jpg);
 
+}
+
+.conspimarket{
+	color: red;
 }

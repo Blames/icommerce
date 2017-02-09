@@ -98,7 +98,7 @@ if(isset($_SESSION['username'])){
 						echo "Une erreur est survenue";
 						die();
 					}
-
+					$db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
 					$insert = $db->prepare("INSERT INTO products VALUES('0','$title','$description','$quantity','$price')"); 
 					$insert -> execute();
 
@@ -114,7 +114,7 @@ if(isset($_SESSION['username'])){
 
 			<form class="headerAdmin" action="" method="post" enctype="multipart/form-data">
 				<h3>Titre du produit :</h3><input type="text" name="title">
-				<h3>Description du produit :</h3><textarea name="description"></textarea>
+				<h3>Description du produit :</h3><input name="description"></input>
 				<h3>Prix :</h3><input type="text" name="price">
 				<h3>Quantité :</h3><input type="text" name="quantity">
 				<h3>Image :</h3>

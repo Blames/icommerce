@@ -1,8 +1,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<?php 
+<?php require_once('includes/header.php'); ?>
 
-require_once('includes/header.php');
+<body class="accueuil">
+<div class="boutique">
+<?php 
 
 
 $db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
@@ -26,6 +28,12 @@ while ($s=$select ->fetch (PDO::FETCH_OBJ)){
 }
 ?>
 	</div>
-<?php
+	</div>
+	</body>
+	<?php
+
 require_once('includes/footer.php');
  ?>
+	
+
+
