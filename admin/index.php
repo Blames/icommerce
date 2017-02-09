@@ -1,4 +1,7 @@
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/icommerce/style/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+<body class="headerAdminBack">
 
 <?php 
 
@@ -33,14 +36,16 @@ if (isset($_POST['submit'])){
 
  ?>
 
-<link rel="stylesheet" type="text/css" href="http://localhost/icommerce/style/style.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<h1>administration - Connexion</h1>
+<div class="buttonAdmin">
+<h1 class="headerAdmin">administration - Connexion</h1>
+<br><br>
 <form action ="" method ="POST">
-<h3>Pseudo : </h3> <input type="text" name="username"/><br/><br/>
-<h3>Mot de passe : </h3> <input type="password" name="password"/><br/><br/>
+<h3 class="headerAdmin">Pseudo : </h3> <input type="text" name="username"/><br/><br/>
+<h3 class="headerAdmin">Mot de passe : </h3> <input type="password" name="password"/><br/><br/>
 <input type="submit" name="submit"/><br/><br/>
 </form>
 
-<a  href="/icommerce/index.php" class="button">Retour à l'acceuil</a>
+<a  href="/icommerce/index.php" id="buttonRetourAccueuil">Retour à l'acceuil</a>
+</div>
+</body>

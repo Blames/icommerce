@@ -1,39 +1,18 @@
-<link rel="stylesheet" type="text/css" href="http://localhost/icommerce/style/style.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/icommerce/style/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <?php 
 
 session_start();?>
-<div class="headerAdminBack">
+<body class="headerAdminBack">
 <br>
 <h1 align="center" class="headerAdmin">PANNEAU D'ADMINISTRATION</h1>
+<br>
+<br>
 <h1 class="headerAdmin">Vous êtes connecté en tant que : <?php echo $_SESSION['username'] ?></h1>
 <a href="/icommerce/index.php"><button type="button" class="btn btn-primary">Retour à l'acceuil</button></a>
-<br>
-<br>
-
-
-
-</br></br>
-</br></br>
-<div class=	"buttonAdmin">
-<a href="?action=add" class="button">Ajouter un produit</a>
-<a href="?action=modifyanddelete" class="button">Modifier/supprimer un produit</a>
-</div>
-
-</br></br>
-</br></br>
-</br></br>
-</br></br>
-</br></br>
-</br></br>
-</br></br>
-</br></br>
-</br></br>
-</br></br>
-</br></br>
-</br></br>
-</br></br>
-</br></br>
+<a href="?action=add"><button type="button" class="btn btn-primary">Ajouter un produit</button></a>
+<a href="?action=modifyanddelete"><button type="button" class="btn btn-primary">Modifier/Supprimer un produit</button></a>
+<br><br>
 
 <?php
 
@@ -120,12 +99,12 @@ if(isset($_SESSION['username'])){
 						die();
 					}
 
-					$insert = $db->prepare("INSERT INTO products VALUES('0','$title','$description','$quantity','$price')"); // Là c'est la merde, il faut que je configure bien ma base de données.
+					$insert = $db->prepare("INSERT INTO products VALUES('0','$title','$description','$quantity','$price')"); 
 					$insert -> execute();
 
 
 				}else{
-					echo "Veuillez remplir tous les champs.";
+					 echo "Veuillez remplir tous les champs.";
 				}
 
 			}
@@ -133,7 +112,7 @@ if(isset($_SESSION['username'])){
 
 			?>
 
-			<form action="" method="post" enctype="multipart/form-data">
+			<form class="headerAdmin" action="" method="post" enctype="multipart/form-data">
 				<h3>Titre du produit :</h3><input type="text" name="title">
 				<h3>Description du produit :</h3><textarea name="description"></textarea>
 				<h3>Prix :</h3><input type="text" name="price">
@@ -215,4 +194,4 @@ else{
 header('location: ../index.php');
 } 
 ?>
-</div>
+</body>

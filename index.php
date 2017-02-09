@@ -8,7 +8,6 @@ require_once('includes/header.php');
 
 	<div class="accueuil">
 	</br>
-		<p >OULALA JE SUIS TON SUBLIME CORPS DE TEXTE !!!</p>
 
 			<p class="presentation">CONSPI-MARKET est un site unique en son genre qui vous propose des solutions adaptées afin de résoudre vos problèmes grégaires.
 				<br><br>
@@ -16,8 +15,9 @@ require_once('includes/header.php');
 				<br><br>
 				CONSPI-MARKET a LA solution adaptée ! Qu’elle soit virale, conspirationiste, alimentaire ou venue d’ailleurs, notre équipe d’experts saura se mettre en quatre pour vous octroyer satisfaction en un temps record.
 				<br><br>
-				CONSPI-MARKET , ce sont près de 50 employés qui montent pour vous et pour votre presse des dossiers afin de détourner l’attention de votre plèbe afin qu’elle s’intéresse à l’essentiel (ce que VOUS avez décidé) 			plutôt qu’à la Vérité.
-				Gouverner en s’amusant, c’est désormais possible, avec CONSPI-MARKET !
+				CONSPI-MARKET, c'est près de 50 employés qui montent pour vous et pour votre presse des dossiers afin de détourner l’attention de votre plèbe afin qu’elle s’intéresse à l’essentiel : ce que vous aurez décidé.
+
+				Préférez la tranquillité à la vérité ! Car gouverner en s’amusant, c’est désormais possible, avec CONSPI-MARKET !
 			</p>
 
 		</br>

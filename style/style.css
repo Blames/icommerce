@@ -1,6 +1,21 @@
+
+#buttonRetourAccueuil{
+	background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 .headerAdmin{
 	color: grey;
 }
+
 .headerAdminBack{
 		background-image: url(http://blog.hostbaby.com/wp-content/uploads/2013/07/scuffedstatic_dark1400x900.jpg);
 		background-attachment: fixed;
