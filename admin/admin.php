@@ -20,7 +20,7 @@ if(isset($_SESSION['username'])){
 
 	if(isset($_GET['action'])){
 
-
+		// AJOUT
 		if ($_GET['action']=='add') {
 			if (isset($_POST['submit'])) {
 				
@@ -33,6 +33,7 @@ if(isset($_SESSION['username'])){
 
 				$img_tmp= $_FILES['img']['tmp_name'];
 
+				// IMAGE
 				if (!empty($img_tmp)) {
 					
 					$image =explode('.',$img);
@@ -126,22 +127,28 @@ if(isset($_SESSION['username'])){
 
 			<?php
 
+		// MODIFICATION ET SUPPRESSION
 		}else if ($_GET['action']=='modifyanddelete') {
 
 			$db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
 			$select = $db->prepare ("SELECT * FROM products"); 
 			$select -> execute();
 
-			while ($s=$select->fetch(PDO::FETCH_OBJ)) {
+			?><div class="headerAdmin">
+			<?php while ($s=$select->fetch(PDO::FETCH_OBJ)) {
+
 				echo $s->name;
+
 				?>
 				<a href="?action=modify&amp;id=<?php echo $s->id; ?>"> Modifier</a>
 				<a href="?action=delete&amp;id=<?php echo $s->id; ?>"> X</a>
 				</br>
+				
 				<?php
 
 			}
-
+			?></div><?php
+		// MODIF
 		}else if ($_GET['action']=='modify') {
 
 
@@ -180,7 +187,7 @@ if(isset($_SESSION['username'])){
 
 		}
 
-
+		//DELETE
 		else if ($_GET['action']=='delete') {
 			$db=new PDO('mysql:host=localhost;dbname=icommerce','root','');
 			$id=$_GET['id'];

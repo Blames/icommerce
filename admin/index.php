@@ -25,7 +25,7 @@ if (isset($_POST['submit'])){
 				$_SESSION['username']=$username;
 				header('location: admin.php');
 
-			}else{
+		}else{
 				echo "Les identifiants semblent erronés";
 			}
 	}else{

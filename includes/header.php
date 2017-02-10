@@ -40,7 +40,7 @@ catch(Exception $e){
 				<ul class="menu">
 					<div class="btn-grp">
 
-								<a href="index.php"><button type="button" class="btn btn-primary">Acceuil</button></a>
+								<a href="index.php"><button type="button" class="btn btn-primary">Accueil</button></a>
 
 								<a href="boutique.php"><button type="button" class="btn btn-primary">Boutique</button></a>
 
